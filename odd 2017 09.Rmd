@@ -1,0 +1,76 @@
+---
+librartitle: "odd 2017 09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Odd retail sales 2017 09
+Ferdi Atesin  , 
+
+
+I am interested in September 2017 sales. First we need to get our data from the [web site](http://www.odd.org.tr/web_2837_1/sortial.aspx?linkpos=2&target=categorial1&type=36&primary_id=&detail=single&sp_table=&sp_primary=&sp_fields=&sp_language=&sp_table_extra=&extracriteria=&language_id=1&search_fields=&search_values=>.)
+
+## Downloading raw data
+
+Initially, we need to download tidyverse package 
+
+```{r }
+library(tidyverse)
+```
+
+
+```
+tmp<-tempfile(fileext="odd_retail_sales_2017_09(fixed).xlsx") 
+```
+
+```
+download.file("https://github.com/MEF-BDA503/pj18-ferdiatesin/blob/master/odd_retail_sales_2017_09(fixed).xlsx?raw=true",destfile=tmp, mode='wb')
+```
+
+
+```
+raw_data<-readxl::read_excel(tmp,skip=7,col_names=FALSE)
+```
+
+```
+file.remove(tmp)
+```
+
+```
+raw_data <- raw_data %>% slice(-c(46,47))
+```
+
+```
+head(raw_data)
+```
+
+
+```
+colnames(raw_data) <- c("brand_name","auto_dom","auto_imp","auto_total","comm_dom","comm_imp","comm_total","total_dom","total_imp","total_total")
+```
+
+```
+car_data_sep_17 <- raw_data %>% mutate_if(is.numeric,funs(ifelse(is.na(.),0,.))) %>% mutate(year=2017,month=9)
+```
+
+```
+print(car_data_sep_17,width=Inf)
+```
+
+```
+saveRDS(car_data_sep_17,file="~/desktop/odd_car_sales_data_sep_17(fixed).rds")
+```
+
+
+
+## Including Plots
+
+
+You can also embed plots
+
+
+
+
