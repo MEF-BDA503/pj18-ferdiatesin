@@ -7,7 +7,7 @@
 
 ## Week 1:
 
-How to create github page
-***[My journal](ferdiatesin.html)***
+How to create github page and this is 
+***[my journal](ferdiatesin.html)***
 
 
