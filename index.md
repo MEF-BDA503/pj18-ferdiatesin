@@ -2,7 +2,7 @@
 
 [Third Assignment: Analysing ODD Data - Part 2
 
-[Link]() to my analysis about import car sale performance
+[Link](https://github.com/MEF-BDA503/pj18-ferdiatesin/blob/master/odd_2.html) to my analysis about import car sale performance
 
 
 
