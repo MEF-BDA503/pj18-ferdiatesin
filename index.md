@@ -2,7 +2,7 @@
 
 [Third Assignment: Analysing ODD Data - Part 2
 
-[Link](odd_2.html) to my analysis about import car sale performance
+[Link]() to my analysis about import car sale performance
 
 
 
