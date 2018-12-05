@@ -1,0 +1,57 @@
+---
+title: "Odd-2 assignment"
+output: html_document
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Ferdi Atesin   
+
+
+
+```{r }
+library(tidyverse)
+```
+
+```{r}
+library(ggplot2)
+library(lubridate)
+```
+
+## Download raw data 
+
+we retrieve the data from github repository with analyzing it to a dataframe:
+
+```{r }
+tmp<-tempfile(fileext=".rds")
+
+download.file("https://github.com/MEF-BDA503/mef-bda503.github.io/blob/master/files/car_data_aggregate.rds?raw=true",destfile=tmp,mode = 'wb')
+raw_data<-read_rds(tmp)
+file.remove(tmp)
+```
+
+```{r}
+head(raw_data)
+```
+
+```{r}
+tail(raw_data)
+```
+
+
+```{r}
+
+```
+
+I would like to investigate total sales trend for the best ten brand. Due to this cause, I need best ten brand in total sales.
+
+```{r}
+
+```
+
+
+
